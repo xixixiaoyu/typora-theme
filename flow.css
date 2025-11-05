@@ -462,7 +462,6 @@ td {
 .md-task-list-item > input:checked:before,
 .md-task-list-item > input[checked]:before {
   content: '\221A';
-  /*◘*/
   font-size: 0.625rem;
   line-height: 0.625rem;
   color: #dedede;
