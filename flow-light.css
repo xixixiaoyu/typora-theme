@@ -31,6 +31,21 @@
   --code-bg-color: #F5F7FA;
   --code-border-color: #E6EAF0;
 
+  /* 代码 token 颜色（护眼、简洁、低饱和） */
+  --code-token-comment: #6F7D8C;     /* 柔和灰，用于注释/提示 */
+  --code-token-keyword: #2B5DB0;     /* 低饱和蓝，突出但不刺眼 */
+  --code-token-type: #2B5DB0;        /* 类型与关键字同色，减少色彩数量 */
+  --code-token-string: #2B6A4A;       /* 低饱和绿，表示字符串 */
+  --code-token-number: #8A5A3C;       /* 暖棕色，数字与常量 */
+  --code-token-function: #2A5AA8;     /* 函数/方法，略深的蓝 */
+  --code-token-variable: #3E546B;     /* 变量/参数，蓝灰中性 */
+  --code-token-attribute: #4A6F8A;    /* 属性/限定符，蓝灰 */
+  --code-token-tag: #2B5DB0;          /* 标签/名称，保持统一的蓝色 */
+  --code-token-builtin: #2A5AA8;      /* 内置/特殊标识 */
+  --code-token-property: #2F506B;     /* 对象属性，更稳重的蓝灰 */
+  --code-token-operator: #364151;     /* 运算符/标点，接近正文色 */
+  --code-token-punctuation: var(--text-color);
+
   /* 链接与强调 */
   --primary-color: #3778C2;
   --accent-color: #BFD8FF;
@@ -207,7 +222,7 @@ var {
 
 code,
 tt,
-var { background: rgba(0, 0, 0, 0.04); }
+var { background: rgba(0, 0, 0, 0.06); }
 
 kbd {
   padding: 2px 4px;
@@ -503,24 +518,27 @@ a:focus { outline: none; box-shadow: 0 0 0 3px rgba(191, 216, 255, 0.85); border
 /* 搜索 spinner 在浅色背景上的可读性优化 */
 .typora-search-spinner > div { background-color: var(--control-text-color); }
 
-/* CodeMirror 语法高亮（浅色、低饱和、护眼） */
-.cm-s-inner .cm-comment { color: #7A8899; }
-.cm-s-inner .cm-keyword { color: #1F5FBF; }
-.cm-s-inner .cm-def { color: #2F506B; }
-.cm-s-inner .cm-variable { color: #2B5876; }
-.cm-s-inner .cm-variable-2 { color: #4A6F8A; }
-.cm-s-inner .cm-variable-3 { color: #4A6F8A; }
-.cm-s-inner .cm-string { color: #8A6F39; }
-.cm-s-inner .cm-number { color: #B44D34; }
-.cm-s-inner .cm-attribute { color: #7C5CA5; }
-.cm-s-inner .cm-atom { color: #5E65A1; }
-.cm-s-inner .cm-tag { color: #395FA6; }
-.cm-s-inner .cm-builtin { color: #1E70A0; }
-.cm-s-inner .cm-property { color: #2F506B; }
-.cm-s-inner .cm-qualifier { color: #596B8C; }
-.cm-s-inner .cm-operator { color: #1F2937; }
+/* CodeMirror 语法高亮（护眼、优雅、简洁、不花哨） */
+.cm-s-inner .cm-comment { color: var(--code-token-comment); }
+.cm-s-inner .cm-keyword { color: var(--code-token-keyword); }
+.cm-s-inner .cm-def { color: var(--code-token-function); }
+.cm-s-inner .cm-variable { color: var(--code-token-variable); }
+.cm-s-inner .cm-variable-2 { color: var(--code-token-variable); }
+.cm-s-inner .cm-variable-3 { color: var(--code-token-variable); }
+.cm-s-inner .cm-string { color: var(--code-token-string); }
+.cm-s-inner .cm-number { color: var(--code-token-number); }
+.cm-s-inner .cm-attribute { color: var(--code-token-attribute); }
+.cm-s-inner .cm-atom { color: var(--code-token-number); }
+.cm-s-inner .cm-tag { color: var(--code-token-tag); }
+.cm-s-inner .cm-builtin { color: var(--code-token-builtin); }
+.cm-s-inner .cm-property { color: var(--code-token-property); }
+.cm-s-inner .cm-qualifier { color: var(--code-token-attribute); }
+.cm-s-inner .cm-operator { color: var(--code-token-operator); }
 .cm-s-inner .CodeMirror-selected { background: var(--select-text-bg-color) !important; }
 .CodeMirror.cm-s-inner .CodeMirror-selected { background: var(--select-text-bg-color) !important; }
+
+/* 当前行轻微背景（增强定位，低打扰） */
+.CodeMirror-activeline-background { background: #EEF2F7 !important; }
 
 /* 表格轻度条纹与 hover，高可读不刺眼 */
 table tbody tr:nth-child(2n) { background-color: #F9FBFD; }
@@ -532,3 +550,25 @@ table tbody tr:hover { background-color: var(--item-hover-bg-color); }
 
 /* 按钮焦点态（键盘导航友好） */
 .btn:focus { outline: none; box-shadow: 0 0 0 3px rgba(191, 216, 255, 0.85); }
+
+/* highlight.js 语法高亮（提升对比但保持低饱和护眼） */
+pre.md-fences code.hljs { color: var(--text-color); background: var(--code-bg-color) !important; }
+.hljs-comment, .hljs-quote { color: var(--code-token-comment); }
+.hljs-keyword, .hljs-selector-tag, .hljs-type, .hljs-title, .hljs-section, .hljs-doctag { color: var(--code-token-keyword); }
+.hljs-string, .hljs-meta .hljs-string, .hljs-template-tag { color: var(--code-token-string); }
+.hljs-number, .hljs-literal { color: var(--code-token-number); }
+.hljs-attribute, .hljs-attr { color: var(--code-token-attribute); }
+.hljs-builtin-name, .hljs-built_in { color: var(--code-token-builtin); }
+.hljs-function .hljs-title, .hljs-title.class_, .hljs-title.function_ { color: var(--code-token-function); }
+.hljs-name, .hljs-tag { color: var(--code-token-tag); }
+.hljs-variable, .hljs-params { color: var(--code-token-variable); }
+.hljs-property { color: var(--code-token-property); }
+.hljs-operator, .hljs-punctuation { color: var(--code-token-operator); }
+.hljs-symbol { color: var(--code-token-builtin); }
+.hljs-meta { color: var(--code-token-comment); }
+.hljs-emphasis { font-style: italic; }
+.hljs-strong { font-weight: 600; }
+
+/* diff 增删，提升可读性而不刺眼 */
+.hljs-addition { background: #E6F5EA; color: #225A2F; }
+.hljs-deletion { background: #FBEAEA; color: #A83A2D; }
