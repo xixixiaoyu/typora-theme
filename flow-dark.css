@@ -1206,3 +1206,60 @@ pre.md-fences code.hljs {
   background: #3a2b29;
   color: #d19a8b;
 }
+/* --- Flow Dark · Soft-eye refinements (2025-11) --- */
+/* 说明：暖暗色系保持统一与克制，通过后置变量覆写与轻度样式增强，提升长时间阅读的舒适度与可访问性。 */
+
+/* 更友好的系统字体栈与浏览器颜色方案声明 */
+html { color-scheme: dark; text-rendering: optimizeLegibility; }
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial,
+               'PingFang SC', 'Microsoft YaHei', 'Noto Sans', 'Noto Sans CJK SC',
+               'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+}
+
+/* 变量微调：保持暖暗基调，略降饱和与提升层次对比 */
+:root {
+  --border-color: #34363A;         /* 保持原变量，确保整体一致 */
+  --code-bg-color: #25282C;        /* 保持原变量 */
+  --code-border-color: #3A3D42;    /* 稍浅，提升边界清晰度 */
+  --link-color: #A5C7A0;           /* 保持柔和鼠尾草绿 */
+  --link-hover-color: #CAE3C6;     /* 保持 hover 亮度提升 */
+}
+
+/* 标题负字距减轻，并启用平衡换行 */
+h1 { letter-spacing: -0.5px; text-wrap: balance; }
+h2 { letter-spacing: -0.25px; text-wrap: balance; }
+h3 { letter-spacing: -0.25px; text-wrap: balance; }
+
+/* 内联代码背景略提升可读性，温和但可辨 */
+code,
+tt,
+var { background: rgba(255, 255, 255, 0.08); border-radius: 4px; }
+
+/* 代码块圆角更柔和，边界更清晰，但不突兀 */
+pre.md-fences {
+  border-radius: 8px;
+  border: 1px solid var(--code-border-color);
+}
+
+/* 表格轻度条纹与 hover（暖暗层次） */
+table tbody tr:nth-child(2n) { background-color: #24272B; }
+table tbody tr:hover { background-color: #2A2D31; }
+
+/* 可访问性：焦点环使用辅色系（鼠尾草绿）更自然 */
+a:focus,
+.btn:focus { box-shadow: 0 0 0 3px rgba(175, 198, 172, 0.55); }
+
+/* 链接访问态（visited）更柔和但与常态区分清晰 */
+a:visited { color: #95B99A; }
+
+/* 动效照顾：用户偏好降低动效时，减小过渡/动画影响 */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}

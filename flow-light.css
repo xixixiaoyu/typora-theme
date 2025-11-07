@@ -572,3 +572,67 @@ pre.md-fences code.hljs { color: var(--text-color); background: var(--code-bg-co
 /* diff 增删，提升可读性而不刺眼 */
 .hljs-addition { background: #E6F5EA; color: #225A2F; }
 .hljs-deletion { background: #FBEAEA; color: #A83A2D; }
+/* --- Flow Light · Soft-eye refinements (2025-11) --- */
+/* 说明：在不改变原有结构的前提下，进一步降低色彩饱和度、提升可读性与可访问性。所有覆盖均通过后置规则与变量覆写实现。 */
+
+/* 更友好的系统字体栈与浏览器颜色方案声明 */
+html { color-scheme: light; text-rendering: optimizeLegibility; }
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial,
+               'PingFang SC', 'Microsoft YaHei', 'Noto Sans', 'Noto Sans CJK SC',
+               'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+}
+
+/* 变量轻度去饱和 / 对比优化（以柔和为主、保证可读对比） */
+:root {
+  --select-text-bg-color: #DDE8F6; /* 更柔和的浅蓝选区 */
+  --border-color: #D8DEE6;         /* 边框略柔和 */
+  --active-file-bg-color: #EDF2FA; /* 激活文件背景更轻 */
+  --code-bg-color: #F6F8FB;        /* 代码区背景更柔和 */
+  --code-border-color: #E7EBF1;    /* 代码区边框更浅 */
+  --accent-color: #CFE1FF;         /* 辅色略降饱和 */
+  --link-color: #1E64CC;           /* 链接轻度降饱和 */
+  --link-hover-color: #1258C4;     /* hover 对比提升但不刺眼 */
+  /* 统一关键字与函数色，减少色彩数量，保持清晰层次 */
+  --code-token-keyword: #2A5FA7;
+  --code-token-type: #2A5FA7;
+  --code-token-function: #2A5FA7;
+}
+
+/* 全局排版小幅优化：行高更舒适 */
+body { line-height: 1.75rem; }
+
+/* 标题：减少负字距，启用平衡换行以提升观感 */
+h1 { letter-spacing: -0.5px; text-wrap: balance; }
+h2 { letter-spacing: -0.25px; text-wrap: balance; }
+h3 { letter-spacing: -0.25px; text-wrap: balance; }
+
+/* 内联代码背景更轻，略圆角，减少视觉重量 */
+code,
+tt,
+var { background: rgba(0, 0, 0, 0.05); border-radius: 4px; }
+
+/* 代码块圆角更柔和，边框更浅，便于长时间阅读 */
+pre.md-fences {
+  border-radius: 8px;
+  border: 1px solid var(--code-border-color);
+}
+
+/* 表格条纹与 hover 保持轻度对比，减少刺眼感 */
+table tbody tr:nth-child(2n) { background-color: #F8FAFD; }
+table tbody tr:hover { background-color: #EEF3F9; }
+
+/* 可访问性：焦点环稍减透明度，仍保持明显可见 */
+a:focus,
+.btn:focus { box-shadow: 0 0 0 3px rgba(191, 216, 255, 0.7); }
+
+/* 动效照顾：用户偏好降低动效时，减小过渡/动画影响 */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
