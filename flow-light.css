@@ -636,3 +636,39 @@ a:focus,
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
+
+/* --- 列表与上一段间距优化 ---------------------------------------------- */
+/* 目的：缩短“段落/标题 → 无序/有序列表”的垂直距离，避免显得过空。           */
+/* 实现：
+   1) 使用 :has 将前一个区块（段落/标题）的 margin-bottom 在紧接列表时降为 0.75rem；
+   2) 为不支持 :has 的旧引擎提供回退：对 p + ul/ol 使用负 margin-top 抵消间距；
+   可通过根变量 --list-gap-above 调整数值。                                   */
+
+:root { --list-gap-above: 1rem; }
+
+/* 列表紧随其后时，减少前一段或标题的底部间距（现代浏览器/新 Electron 支持） */
+p:has(+ ul), p:has(+ ol),
+h1:has(+ ul), h1:has(+ ol),
+h2:has(+ ul), h2:has(+ ol),
+h3:has(+ ul), h3:has(+ ol),
+h4:has(+ ul), h4:has(+ ol),
+h5:has(+ ul), h5:has(+ ol),
+h6:has(+ ul), h6:has(+ ol) {
+  margin-bottom: var(--list-gap-above);
+}
+
+/* 回退：旧版 Electron/Chromium 若不支持 :has，则用负值顶边距抵消段落的 1.5rem */
+p + ul, p + ol {
+  /* 回退计算：目标最终间距为 --list-gap-above，段落/标题默认 1.5rem。
+     因为会发生 margin 折叠，设置列表的 margin-top = (目标间距 - 1.5rem)。 */
+  margin-top: calc(var(--list-gap-above) - 1.5rem);
+}
+/* 旧引擎回退（标题后紧接列表） */
+h1 + ul, h1 + ol,
+h2 + ul, h2 + ol,
+h3 + ul, h3 + ol,
+h4 + ul, h4 + ol,
+h5 + ul, h5 + ol,
+h6 + ul, h6 + ol {
+  margin-top: calc(var(--list-gap-above) - 1.5rem);
+}

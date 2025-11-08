@@ -5,52 +5,52 @@
 
 :root {
   /* 暖中性高级感：清新柔蓝 + 香槟金点缀（优雅、简洁、护眼） */
-  --bg-color: #1E1F22;
-  --side-bar-bg-color: #1C1E21;
-  --text-color: #E9E7E4;
+  --bg-color: #1e1f22;
+  --side-bar-bg-color: #1c1e21;
+  --text-color: #e9e7e4;
 
-  --select-text-bg-color: #3A463D; /* 去蓝化：暖橄榄灰选区 */
-  --selection-text-color: #F1F1EE;
+  --select-text-bg-color: #3a463d; /* 去蓝化：暖橄榄灰选区 */
+  --selection-text-color: #f1f1ee;
 
-  --item-hover-bg-color: #272A2F;
-  --control-text-color: #CFCBC4;
-  --control-text-hover-color: #F0EDE8;
-  --window-border: 1px solid #34363A;
+  --item-hover-bg-color: #272a2f;
+  --control-text-color: #cfcbc4;
+  --control-text-hover-color: #f0ede8;
+  --window-border: 1px solid #34363a;
 
-  --active-file-bg-color: #24272C;
-  --active-file-border-color: #AFC6AC; /* 去蓝化：鼠标/激活强调改为鼠尾草绿 */
+  --active-file-bg-color: #24272c;
+  --active-file-border-color: #afc6ac; /* 去蓝化：鼠标/激活强调改为鼠尾草绿 */
 
-  --primary-color: #C9A669;      /* 香槟金，少量用于强调 */
-  --accent-color: #AFC6AC;       /* 去蓝化：鼠尾草绿为辅色 */
+  --primary-color: #c9a669; /* 香槟金，少量用于强调 */
+  --accent-color: #afc6ac; /* 去蓝化：鼠尾草绿为辅色 */
 
-  --active-file-text-color: #F2EFEB;
-  --item-hover-text-color: #F2EFEB;
+  --active-file-text-color: #f2efeb;
+  --item-hover-text-color: #f2efeb;
 
   --rawblock-edit-panel-bd: #222428;
 
-  --code-bg-color: #25282C;
-  --code-border-color: #36383D;
+  --code-bg-color: #25282c;
+  --code-border-color: #36383d;
 
-  --link-color: #A5C7A0;         /* 链接改为低饱和鼠尾草绿 */
-  --link-hover-color: #CAE3C6;
+  --link-color: #a5c7a0; /* 链接改为低饱和鼠尾草绿 */
+  --link-hover-color: #cae3c6;
 
-  --kbd-bg-color: #2B2E33;
-  --kbd-text-color: #F2EFEB;
-  --border-color: #34363A;
+  --kbd-bg-color: #2b2e33;
+  --kbd-text-color: #f2efeb;
+  --border-color: #34363a;
 
   /* 代码 token 颜色（去蓝化，优雅简洁） */
-  --code-token-comment: #9A9189;    /* greige 注释 */
-  --code-token-keyword: #D8A657;    /* 关键字/类型：香槟金/琥珀 */
-  --code-token-type: #D8A657;
-  --code-token-string: #A8D08D;     /* 低饱和绿 字符串 */
-  --code-token-number: #E6A05E;     /* 暖琥珀 数字 */
-  --code-token-function: #D8A657;   /* 函数并入关键字色，减少色彩数量 */
-  --code-token-variable: #DAD6CE;   /* 中性变量，降低干扰 */
-  --code-token-attribute: #A0C2B0;  /* 属性：鼠尾草灰绿 */
-  --code-token-tag: #D8A657;        /* 标签/名称：统一为琥珀 */
-  --code-token-builtin: #D8A657;    /* 内置：统一为琥珀 */
-  --code-token-property: #C9C2B7;   /* 属性：暖灰 */
-  --code-token-operator: #CFC8BD;   /* 运算符：接近正文 */
+  --code-token-comment: #9a9189; /* greige 注释 */
+  --code-token-keyword: #d8a657; /* 关键字/类型：香槟金/琥珀 */
+  --code-token-type: #d8a657;
+  --code-token-string: #a8d08d; /* 低饱和绿 字符串 */
+  --code-token-number: #e6a05e; /* 暖琥珀 数字 */
+  --code-token-function: #d8a657; /* 函数并入关键字色，减少色彩数量 */
+  --code-token-variable: #dad6ce; /* 中性变量，降低干扰 */
+  --code-token-attribute: #a0c2b0; /* 属性：鼠尾草灰绿 */
+  --code-token-tag: #d8a657; /* 标签/名称：统一为琥珀 */
+  --code-token-builtin: #d8a657; /* 内置：统一为琥珀 */
+  --code-token-property: #c9c2b7; /* 属性：暖灰 */
+  --code-token-operator: #cfc8bd; /* 运算符：接近正文 */
   --code-token-punctuation: var(--text-color);
 }
 
@@ -1128,7 +1128,7 @@ pre.md-fences code {
   background: var(--select-text-bg-color) !important;
 }
 .CodeMirror-activeline-background {
-  background: #2A2D31 !important;
+  background: #2a2d31 !important;
 }
 
 /* highlight.js 语法高亮（提升对比但保持低饱和） */
@@ -1210,7 +1210,10 @@ pre.md-fences code.hljs {
 /* 说明：暖暗色系保持统一与克制，通过后置变量覆写与轻度样式增强，提升长时间阅读的舒适度与可访问性。 */
 
 /* 更友好的系统字体栈与浏览器颜色方案声明 */
-html { color-scheme: dark; text-rendering: optimizeLegibility; }
+html {
+  color-scheme: dark;
+  text-rendering: optimizeLegibility;
+}
 html,
 body,
 button,
@@ -1219,28 +1222,40 @@ select,
 textarea,
 div.code-tooltip-content {
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial,
-               'PingFang SC', 'Microsoft YaHei', 'Noto Sans', 'Noto Sans CJK SC',
-               'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+    'PingFang SC', 'Microsoft YaHei', 'Noto Sans', 'Noto Sans CJK SC', 'Segoe UI Emoji',
+    'Segoe UI Symbol', sans-serif;
 }
 
 /* 变量微调：保持暖暗基调，略降饱和与提升层次对比 */
 :root {
-  --border-color: #34363A;         /* 保持原变量，确保整体一致 */
-  --code-bg-color: #25282C;        /* 保持原变量 */
-  --code-border-color: #3A3D42;    /* 稍浅，提升边界清晰度 */
-  --link-color: #A5C7A0;           /* 保持柔和鼠尾草绿 */
-  --link-hover-color: #CAE3C6;     /* 保持 hover 亮度提升 */
+  --border-color: #34363a; /* 保持原变量，确保整体一致 */
+  --code-bg-color: #25282c; /* 保持原变量 */
+  --code-border-color: #3a3d42; /* 稍浅，提升边界清晰度 */
+  --link-color: #a5c7a0; /* 保持柔和鼠尾草绿 */
+  --link-hover-color: #cae3c6; /* 保持 hover 亮度提升 */
 }
 
 /* 标题负字距减轻，并启用平衡换行 */
-h1 { letter-spacing: -0.5px; text-wrap: balance; }
-h2 { letter-spacing: -0.25px; text-wrap: balance; }
-h3 { letter-spacing: -0.25px; text-wrap: balance; }
+h1 {
+  letter-spacing: -0.5px;
+  text-wrap: balance;
+}
+h2 {
+  letter-spacing: -0.25px;
+  text-wrap: balance;
+}
+h3 {
+  letter-spacing: -0.25px;
+  text-wrap: balance;
+}
 
 /* 内联代码背景略提升可读性，温和但可辨 */
 code,
 tt,
-var { background: rgba(255, 255, 255, 0.08); border-radius: 4px; }
+var {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+}
 
 /* 代码块圆角更柔和，边界更清晰，但不突兀 */
 pre.md-fences {
@@ -1248,18 +1263,83 @@ pre.md-fences {
   border: 1px solid var(--code-border-color);
 }
 
+/* --- 列表与上一段间距优化 ---------------------------------------------- */
+/* 目的：缩短“段落/标题 → 无序/有序列表”的垂直距离，避免显得过空。           */
+/* 实现：
+   1) 使用 :has 将前一个区块（段落/标题）的 margin-bottom 在紧接列表时降为 0.75rem；
+   2) 为不支持 :has 的旧引擎提供回退：对 p + ul/ol 使用负 margin-top 抵消间距；
+   可通过根变量 --list-gap-above 调整数值。                                   */
+
+:root {
+  --list-gap-above: 1rem;
+}
+
+/* 列表紧随其后时，减少前一段或标题的底部间距（现代浏览器/新 Electron 支持） */
+p:has(+ ul),
+p:has(+ ol),
+h1:has(+ ul),
+h1:has(+ ol),
+h2:has(+ ul),
+h2:has(+ ol),
+h3:has(+ ul),
+h3:has(+ ol),
+h4:has(+ ul),
+h4:has(+ ol),
+h5:has(+ ul),
+h5:has(+ ol),
+h6:has(+ ul),
+h6:has(+ ol) {
+  margin-bottom: var(--list-gap-above);
+}
+
+/* 回退：旧版 Electron/Chromium 若不支持 :has，则用负值顶边距抵消段落的 1.5rem */
+p + ul,
+p + ol {
+  /* 回退计算：目标最终间距为 --list-gap-above，段落/标题默认 1.5rem。
+     因为会发生 margin 折叠，设置列表的 margin-top = (目标间距 - 1.5rem)。 */
+  margin-top: calc(var(--list-gap-above) - 1.5rem);
+}
+/* 旧引擎回退（标题后紧接列表） */
+h1 + ul,
+h1 + ol,
+h2 + ul,
+h2 + ol,
+h3 + ul,
+h3 + ol,
+h4 + ul,
+h4 + ol,
+h5 + ul,
+h5 + ol,
+h6 + ul,
+h6 + ol {
+  margin-top: calc(var(--list-gap-above) - 1.5rem);
+}
+
 /* 表格轻度条纹与 hover（暖暗层次） */
-table tbody tr:nth-child(2n) { background-color: #24272B; }
-table tbody tr:hover { background-color: #2A2D31; }
+table tbody tr:nth-child(2n) {
+  background-color: #24272b;
+}
+table tbody tr:hover {
+  background-color: #2a2d31;
+}
 
 /* 可访问性：焦点环使用辅色系（鼠尾草绿）更自然 */
 a:focus,
-.btn:focus { box-shadow: 0 0 0 3px rgba(175, 198, 172, 0.55); }
+.btn:focus {
+  box-shadow: 0 0 0 3px rgba(175, 198, 172, 0.55);
+}
 
 /* 链接访问态（visited）更柔和但与常态区分清晰 */
-a:visited { color: #95B99A; }
+a:visited {
+  color: #95b99a;
+}
 
 /* 动效照顾：用户偏好降低动效时，减小过渡/动画影响 */
 @media (prefers-reduced-motion: reduce) {
-  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
