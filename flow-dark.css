@@ -37,6 +37,8 @@
   --kbd-bg-color: #2b2e33;
   --kbd-text-color: #f2efeb;
   --border-color: #34363a;
+  /* 段落/块级间距（可调），用于控制空一行时的视觉间隔 */
+  --paragraph-gap: 1rem;
 
   /* 代码 token 颜色（去蓝化，优雅简洁） */
   --code-token-comment: #9a9189; /* greige 注释 */
@@ -275,7 +277,7 @@ iframe,
 .wp-audio-shortcode,
 .wp-video-shortcode {
   margin-top: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--paragraph-gap);
   /* 24px */
 }
 
