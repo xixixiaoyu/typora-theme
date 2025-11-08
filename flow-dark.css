@@ -7,7 +7,7 @@
   /* 暖中性高级感：清新柔蓝 + 香槟金点缀（优雅、简洁、护眼） */
   --bg-color: #1e1f22;
   --side-bar-bg-color: #1c1e21;
-  --text-color: #e9e7e4;
+  --text-color: #d3cec7; /* 更柔和的正文色，降低对比到约 ~10.4:1 */
 
   --select-text-bg-color: #3a463d; /* 去蓝化：暖橄榄灰选区 */
   --selection-text-color: #f1f1ee;
@@ -23,8 +23,8 @@
   --primary-color: #c9a669; /* 香槟金，少量用于强调 */
   --accent-color: #afc6ac; /* 去蓝化：鼠尾草绿为辅色 */
 
-  --active-file-text-color: #f2efeb;
-  --item-hover-text-color: #f2efeb;
+  --active-file-text-color: #e3e0db; /* 降低标题/激活文本亮度峰值，减轻刺眼感 */
+  --item-hover-text-color: #e3e0db; /* 与激活文本保持一致的柔和亮度 */
 
   --rawblock-edit-panel-bd: #222428;
 
@@ -519,12 +519,12 @@ td {
 
 .typora-quick-open-item.active,
 .typora-quick-open-item:hover {
-  background-color: #4d8bdb;
-  color: white;
+  background-color: #6f8876; /* 更柔和的灰绿色，替代高饱和蓝色 */
+  color: var(--active-file-text-color);
 }
 
 .typora-quick-open-item:hover {
-  background-color: rgba(77, 139, 219, 0.8);
+  background-color: rgba(111, 136, 118, 0.8);
 }
 
 .typora-search-spinner > div {
