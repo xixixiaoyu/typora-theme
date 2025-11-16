@@ -67,7 +67,7 @@ body {
   -ms-text-size-adjust: 100%;
   background: var(--bg-color);
   fill: currentColor;
-  line-height: 1.72rem;
+  line-height: 1.75;
 }
 
 #write {
