@@ -38,7 +38,7 @@
   --kbd-text-color: #f2efeb;
   --border-color: #34363a;
   /* 段落/块级间距（可调），用于控制空一行时的视觉间隔 */
-  --paragraph-gap: 1rem;
+  --paragraph-gap: 1.125rem;
 
   /* 代码 token 颜色（去蓝化，优雅简洁） */
   --code-token-comment: #9a9189; /* greige 注释 */

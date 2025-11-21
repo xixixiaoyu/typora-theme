@@ -10,6 +10,7 @@
   --bg-color: #fafafa;
   --side-bar-bg-color: #f5f6f8;
   --text-color: #2b2f36;
+  --paragraph-gap: 1.125rem;
 
   /* 选区与交互 */
   --select-text-bg-color: #cde6fe;
@@ -1154,9 +1155,8 @@ div.code-tooltip-content {
   --code-token-function: #2a5fa7;
 }
 
-/* 全局排版小幅优化：行高更舒适 */
 body {
-  line-height: 1.75rem;
+  line-height: 1.75;
 }
 
 /* 标题：减少负字距，启用平衡换行以提升观感 */
